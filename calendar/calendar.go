@@ -3,6 +3,7 @@ package calendar
 import (
 	"hash/crc32"
 	"log"
+	"sync"
 	"time"
 
 	"github.com/GGP1/comeet/event"
@@ -18,7 +19,7 @@ type Service interface {
 	GetEvents() ([]*event.Event, error)
 }
 
-// Poller ..
+// Poller represents an entity capable of polling events from third party services.
 type Poller interface {
 	Start() error
 }
@@ -27,10 +28,11 @@ type poller struct {
 	scheduler       scheduler.Scheduler
 	finishedEvents  <-chan string
 	scheduledEvents map[string]uint32
+	mu              *sync.Mutex
 	services        []Service
 }
 
-// NewPoller returns a new calendar client.
+// NewPoller returns an object that looks for and sends events to the scheduler.
 func NewPoller(scheduler scheduler.Scheduler, finishedEvents <-chan string, services ...Service) Poller {
 	return &poller{
 		scheduler:       scheduler,
@@ -40,49 +42,50 @@ func NewPoller(scheduler scheduler.Scheduler, finishedEvents <-chan string, serv
 	}
 }
 
-// Run fetches and schedules events from third party services every 15 minutes.
+// Start fetches and schedules events from third party services every x minutes.
 func (c *poller) Start() error {
-	if err := c.scheduleEvents(); err != nil {
-		return err
-	}
+	c.fetchEvents()
 
 	ticker := time.NewTicker(interval)
 
 	for {
 		select {
 		case <-ticker.C:
-			if err := c.scheduleEvents(); err != nil {
-				log.Println(err)
-			}
+			c.fetchEvents()
 
 		case eventID := <-c.finishedEvents:
+			c.mu.Lock()
 			delete(c.scheduledEvents, eventID)
+			c.mu.Unlock()
 		}
 	}
 }
 
-// scheduleEvents sends non-scheduled or updated events to the scheduler.
-//
-// Concurrency is not used as it provides more drawbacks than benefits.
-func (c *poller) scheduleEvents() error {
+// fetchEvents sets each one of the services to fetch and schedule events.
+func (c *poller) fetchEvents() {
 	for _, service := range c.services {
-		events, err := service.GetEvents()
-		if err != nil {
-			return errors.Wrap(err, "failed fetching events")
-		}
+		go c.scheduleEvents(service)
+	}
+}
 
-		for _, event := range events {
-			checksum := crc32.ChecksumIEEE([]byte(event.String()))
-
-			v, ok := c.scheduledEvents[event.ID]
-			if ok && checksum == v {
-				continue
-			}
-
-			c.scheduledEvents[event.ID] = checksum
-			c.scheduler.Schedule(event)
-		}
+// scheduleEvents gets the events from a service and sends non-scheduled or updated ones to the scheduler.
+func (c *poller) scheduleEvents(service Service) {
+	events, err := service.GetEvents()
+	if err != nil {
+		log.Println(errors.Wrap(err, "failed fetching events"))
 	}
 
-	return nil
+	c.mu.Lock()
+	for _, event := range events {
+		checksum := crc32.ChecksumIEEE([]byte(event.String()))
+
+		v, ok := c.scheduledEvents[event.ID]
+		if ok && checksum == v {
+			continue
+		}
+
+		c.scheduledEvents[event.ID] = checksum
+		c.scheduler.Schedule(event)
+	}
+	c.mu.Unlock()
 }
