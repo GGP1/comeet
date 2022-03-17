@@ -1,0 +1,46 @@
+calendarServices:
+  google: true
+  microsoft: false
+domainWhitelist:
+  - domain-1.com
+  - domain-2.com
+notification:
+  mail:
+    smtpHostAddress: smtp.provider.com # required
+    smtpHostPort: 587 # required
+    senderAddress: sender@mail.com # required
+    senderPassword: senderPassowrd # required
+    receiverAddresses:
+      - receiver@mail.com
+  telegram:
+    botAPIToken: BotAPIToken # required
+    chatIDs: 
+      - chatID1
+      - chatID2
+  notifications:
+    -
+      delta: 15m # Max is 1h (may change in the future)
+      services:
+        - mail
+        - telegram
+    -
+      delta: 0m # Event start
+      services:
+        - desktop
+        - join
+google:
+  -
+    clientID: clientID # required
+    clientSecret: clientSecret # required
+    tokenPath: /path/to/tokenFile
+    calendarID: birthdays
+  -
+    clientID: clientID2
+    clientSecret: clientSecret2
+    tokenPath: /path/to/tokenFile2
+    calendarID: primary
+microsoft:
+  -
+    tenantID: tenantID # required
+    clientID: clientID # required
+    clientSecret: clientSecret # required

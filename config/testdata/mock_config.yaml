@@ -1,0 +1,9 @@
+calendarServices:
+  microsoft: true
+domainWhitelist:
+  - teams.microsoft.com
+microsoft:
+  -
+    tenantID: tenantID
+    clientID: clientID
+    clientSecret: clientSecret
