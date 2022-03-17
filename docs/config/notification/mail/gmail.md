@@ -2,12 +2,12 @@
 
 ```yml
 mail:
-    smtpHostAddress: smtp.gmail.com # required
-    smtpHostPort: 587 # required
-    senderAddress: sender@gmail.com # required
-    senderPassword: senderPassowrd # required
-    receiverAddresses:
-      - receiver@mail.com
+  smtpHostAddress: smtp.gmail.com # required
+  smtpHostPort: 587 # required
+  senderAddress: sender@gmail.com # required
+  senderPassword: senderPassowrd # required
+  receiverAddresses:
+    - receiver@mail.com
 ```
 
 ### Sender password

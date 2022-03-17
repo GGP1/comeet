@@ -2,10 +2,10 @@
 
 ```yml
 telegram:
-    botAPIToken: botAPIToken # required
-    chatIDs: 
-      - chatID1
-      - chatID2
+  botAPIToken: botAPIToken # required
+  chatIDs: 
+    - chatID1
+    - chatID2
 ```
 
 ### Bot API token

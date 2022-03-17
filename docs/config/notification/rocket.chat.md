@@ -2,13 +2,13 @@
 
 ```yml
 rocketchat:
-	serverURL: server
-	userID: 123456789
-	token: token
-	roomIDs:
-		- "roomID1"
-		- "#channel"
-		- "@user"
+  serverURL: server
+  userID: 123456789
+  token: token
+  roomIDs:
+    - "roomID1"
+    - "#channel"
+    - "@user"
 ```
 
 ### Token and userID

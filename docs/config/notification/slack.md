@@ -2,10 +2,10 @@
 
 ```yml
 slack:
-	botAccessToken: botAccessToken
-	channelIDs:
-		- channel1
-		- channel2
+  botAccessToken: botAccessToken
+  channelIDs:
+    - channel1
+    - channel2
 ```
 
 ### Bot Access Token
