@@ -17,6 +17,7 @@ const mockConfigPath = "testdata/mock_config.yaml"
 var mockConfig = Config{
 	DomainWhitelist: []string{"teams.microsoft.com"},
 	Microsoft: microsoft.Config{
+		Enabled: true,
 		Accounts: []*microsoft.Account{
 			{
 				TenantID:     "tenantID",
@@ -33,51 +34,6 @@ func TestNew(t *testing.T) {
 	got, err := New()
 	assert.NoError(t, err)
 	assert.Equal(t, mockConfig, got)
-}
-
-func TestGetCalendarServices(t *testing.T) {
-	// Expect google default configuration being used when its service is present
-	cases := []struct {
-		desc          string
-		config        Config
-		expectedCount int
-	}{
-		{
-			desc: "All services",
-			config: Config{
-				Google: google.Config{
-					Enabled: true,
-				},
-				Microsoft: microsoft.Config{
-					Enabled: true,
-				},
-			},
-			expectedCount: 1,
-		},
-		{
-			desc:          "Google",
-			config:        Config{Google: google.Config{Enabled: true}},
-			expectedCount: 1,
-		},
-		{
-			desc:          "Microsoft",
-			config:        Config{Microsoft: microsoft.Config{Enabled: true}},
-			expectedCount: 0,
-		},
-		{
-			desc:          "None",
-			config:        Config{},
-			expectedCount: 0,
-		},
-	}
-
-	for _, tc := range cases {
-		t.Run(tc.desc, func(t *testing.T) {
-			services, err := GetCalendarServices(tc.config)
-			assert.NoError(t, err)
-			assert.Equal(t, tc.expectedCount, len(services))
-		})
-	}
 }
 
 func TestLoad(t *testing.T) {

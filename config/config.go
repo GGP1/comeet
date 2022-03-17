@@ -99,7 +99,7 @@ func validate(c Config) error {
 
 	if c.Google.Enabled {
 		for _, acc := range c.Google.Accounts {
-			if acc.ClientID == "" && acc.ClientSecret == "" {
+			if acc.ClientID == "" || acc.ClientSecret == "" {
 				return errors.Errorf("Google client %q has invalid credentials", acc.ClientID)
 			}
 		}

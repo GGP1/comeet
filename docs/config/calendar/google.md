@@ -1,10 +1,13 @@
 ## Google calendar
 
 ```yml
-clientID: clientID # required
-clientSecret: clientSecret # required
-tokenPath: /path/to/tokenFile
-calendarID: primary
+enabled: true
+accounts:
+	-
+	clientID: clientID # required
+	clientSecret: clientSecret # required
+	tokenPath: /path/to/tokenFile
+	calendarID: primary
 ```
 
 On the first execution you will be prompted for a verification that is obtained by following the URL provided and authenticating with the account for the calendar you use. If you are using multiple accounts, you will be prompted many times.

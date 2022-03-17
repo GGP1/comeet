@@ -29,18 +29,22 @@ notification:
         - desktop
         - join
 google:
-  -
-    clientID: clientID # required
-    clientSecret: clientSecret # required
-    tokenPath: /path/to/tokenFile
-    calendarID: birthdays
-  -
-    clientID: clientID2
-    clientSecret: clientSecret2
-    tokenPath: /path/to/tokenFile2
-    calendarID: primary
+  enabled: true
+  accounts:
+    -
+      clientID: clientID # required
+      clientSecret: clientSecret # required
+      tokenPath: /path/to/tokenFile
+      calendarID: birthdays
+    -
+      clientID: clientID2
+      clientSecret: clientSecret2
+      tokenPath: /path/to/tokenFile2
+      calendarID: primary
 microsoft:
-  -
-    tenantID: tenantID # required
-    clientID: clientID # required
-    clientSecret: clientSecret # required
+  enabled: false
+  accounts:
+    -
+      tenantID: tenantID # required
+      clientID: clientID # required
+      clientSecret: clientSecret # required
