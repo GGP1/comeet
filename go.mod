@@ -1,6 +1,6 @@
 module github.com/GGP1/comeet
 
-go 1.18
+go 1.17
 
 require (
 	github.com/gen2brain/beeep v0.0.0-20210529141713-5586760f0cc1
