@@ -1,6 +1,3 @@
-calendarServices:
-  google: true
-  microsoft: false
 domainWhitelist:
   - domain-1.com
   - domain-2.com
