@@ -56,16 +56,8 @@ brews:
       name: homebrew-tap
     folder: Formula
     homepage: https://github.com/GGP1/comeet
-    description: Service that keeps track of events from multiple calendar services and accounts, and sends you notifications through different platforms that can be completely customized.
+    description: Service that keeps track of events from multiple calendar services and accounts, and sends you notifications.
     license: Apache 2.0
-
-scoop:
-  bucket:
-    owner: GGP1
-    name: scoop-bucket
-  homepage:  https://github.com/GGP1/comeet
-  description: Service that keeps track of events from multiple calendar services and accounts, and sends you notifications through different platforms that can be completely customized.
-  license: Apache 2.0
 
 nfpms:
 - 
@@ -73,7 +65,7 @@ nfpms:
     - deb
   maintainer: GGP1
   homepage: https://github.com/GGP1/comeet
-  description: Service that keeps track of events from multiple calendar services and accounts, and sends you notifications through different platforms that can be completely customized.
+  description: Service that keeps track of events from multiple calendar services and accounts, and sends you notifications.
   license: Apache 2.0
   file_name_template: '{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
   replacements:

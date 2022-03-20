@@ -23,19 +23,6 @@ brew install GGP1/tap/comeet
 </details>
 
 <details>
-	<summary>Scoop (Windows)</summary>
-
-```
-scoop bucket add GGP1 https://github.com/GGP1/scoop-bucket.git
-scoop install GGP1/comeet
-```
-or 
-```
-scoop install https://raw.githubusercontent.com/GGP1/scoop-bucket/master/bucket/comeet.json
-```
-</details>
-
-<details>
 	<summary>Docker</summary>
 
 ```
