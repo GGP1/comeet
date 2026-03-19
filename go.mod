@@ -1,6 +1,6 @@
 module github.com/GGP1/comeet
 
-go 1.17
+go 1.25.0
 
 require (
 	github.com/gen2brain/beeep v0.0.0-20210529141713-5586760f0cc1
@@ -12,7 +12,6 @@ require (
 )
 
 require (
-	cloud.google.com/go/compute v1.19.1 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v0.21.1 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v0.13.1
 	github.com/Azure/azure-sdk-for-go/sdk/internal v0.9.1 // indirect
@@ -50,7 +49,7 @@ require (
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/crypto v0.14.0 // indirect
 	golang.org/x/net v0.17.0 // indirect
-	golang.org/x/oauth2 v0.7.0
+	golang.org/x/oauth2 v0.36.0
 	golang.org/x/sys v0.13.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
@@ -61,7 +60,7 @@ require (
 )
 
 require (
-	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+	cloud.google.com/go/compute/metadata v0.3.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.2.3 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 )
