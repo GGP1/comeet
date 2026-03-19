@@ -45,7 +45,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/slack-go/slack v0.10.2
 	github.com/tadvi/systray v0.0.0-20190226123456-11a2b8fa57af // indirect
-	github.com/teambition/rrule-go v1.7.3
+	github.com/teambition/rrule-go v1.8.2
 	github.com/yosida95/uritemplate/v3 v3.0.1 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/crypto v0.14.0 // indirect
