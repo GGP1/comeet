@@ -6,7 +6,7 @@ require (
 	github.com/gen2brain/beeep v0.11.2
 	github.com/gen2brain/dlgs v0.0.0-20211108104213-bade24837f0b
 	github.com/pkg/errors v0.9.1
-	github.com/stretchr/testify v1.11.1
+	github.com/stretchr/testify v1.12.1
 	google.golang.org/api v0.293.0
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -18,7 +18,6 @@ require (
 	github.com/AzureAD/microsoft-authentication-library-for-go v1.7.2 // indirect
 	github.com/RocketChat/Rocket.Chat.Go.SDK v0.0.0-20210506200512-3b3352a919f0
 	github.com/cjlapao/common-go v0.0.18 // indirect
-	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/emersion/go-autostart v0.0.0-20210130080809-00ed301c8e9a
 	github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
@@ -33,7 +32,6 @@ require (
 	github.com/microsoftgraph/msgraph-sdk-go v0.10.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.0.9 // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
-	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/slack-go/slack v0.27.0
 	github.com/tadvi/systray v0.0.0-20190226123456-11a2b8fa57af // indirect
 	github.com/teambition/rrule-go v1.8.2
@@ -71,5 +69,6 @@ require (
 	go.opentelemetry.io/otel v1.44.0 // indirect
 	go.opentelemetry.io/otel/metric v1.44.0 // indirect
 	go.opentelemetry.io/otel/trace v1.44.0 // indirect
+	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260807164820-c8921c73eeea // indirect
 )
