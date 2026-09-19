@@ -7,7 +7,7 @@ require (
 	github.com/gen2brain/dlgs v0.0.0-20211108104213-bade24837f0b
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.12.1
-	google.golang.org/api v0.297.0
+	google.golang.org/api v0.298.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
