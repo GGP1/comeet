@@ -3,7 +3,7 @@ module github.com/GGP1/comeet
 go 1.26.0
 
 require (
-	github.com/gen2brain/beeep v0.11.3
+	github.com/gen2brain/beeep v0.12.0
 	github.com/gen2brain/dlgs v0.0.0-20211108104213-bade24837f0b
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.12.1
@@ -51,6 +51,7 @@ require (
 	cloud.google.com/go/compute/metadata v0.10.0 // indirect
 	git.sr.ht/~jackmordaunt/go-toast v1.1.2 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
+	github.com/ebitengine/purego v0.10.2 // indirect
 	github.com/esiqveland/notify v0.13.3 // indirect
 	github.com/felixge/httpsnoop v1.1.0 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
@@ -60,8 +61,6 @@ require (
 	github.com/google/s2a-go v0.1.11 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.23 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
-	github.com/jackmordaunt/icns/v3 v3.0.1 // indirect
-	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/sergeymakinen/go-bmp v1.0.0 // indirect
 	github.com/sergeymakinen/go-ico v1.0.0-beta.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
