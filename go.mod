@@ -32,7 +32,7 @@ require (
 	github.com/microsoftgraph/msgraph-sdk-go v0.10.0
 	github.com/microsoftgraph/msgraph-sdk-go-core v0.0.9 // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
-	github.com/slack-go/slack v0.34.0
+	github.com/slack-go/slack v0.36.0
 	github.com/tadvi/systray v0.0.0-20190226123456-11a2b8fa57af // indirect
 	github.com/teambition/rrule-go v1.8.2
 	github.com/yosida95/uritemplate/v3 v3.0.1 // indirect
@@ -69,7 +69,7 @@ require (
 	go.opentelemetry.io/otel v1.45.0 // indirect
 	go.opentelemetry.io/otel/metric v1.45.0 // indirect
 	go.opentelemetry.io/otel/trace v1.45.0 // indirect
-	go.yaml.in/yaml/v3 v3.0.5 // indirect
+	go.yaml.in/yaml/v3 v3.0.6 // indirect
 	golang.org/x/sync v0.24.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20261019180522-ce908d29299b // indirect
 )
